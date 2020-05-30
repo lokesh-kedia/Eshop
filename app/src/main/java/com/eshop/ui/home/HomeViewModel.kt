@@ -14,18 +14,18 @@ class HomeViewModel : ViewModel() {
 
     private val _listCategory = MutableLiveData<ArrayList<CategoryModel>>().apply {
         value = arrayListOf(
-            CategoryModel(R.drawable.ic_address, "Grocery & Staples"),
-            CategoryModel(R.drawable.ic_address, "Home & Kitchen"),
-            CategoryModel(R.drawable.ic_address, "HouseHold Items"),
-            CategoryModel(R.drawable.ic_address, "Personal Care"),
-            CategoryModel(R.drawable.ic_address, "Hygiene First"),
-            CategoryModel(R.drawable.ic_address, "Beverages"),
-            CategoryModel(R.drawable.ic_address, "Breakfast & Dairy"),
-            CategoryModel(R.drawable.ic_address, "Baby & Pet Care"),
-            CategoryModel(R.drawable.ic_address, "Packaged Food"),
-            CategoryModel(R.drawable.ic_address, "Lowest Price"),
-            CategoryModel(R.drawable.ic_address, "Best Value"),
-            CategoryModel(R.drawable.ic_address, "Fruits & Vegetable")
+            CategoryModel(R.drawable.ic_grocery, "Grocery & Staples"),
+            CategoryModel(R.drawable.ic_kitchen, "Home & Kitchen"),
+            CategoryModel(R.drawable.ic_household, "HouseHold Items"),
+            CategoryModel(R.drawable.ic_personal, "Personal Care"),
+            CategoryModel(R.drawable.ic_hygiene, "Hygiene First"),
+            CategoryModel(R.drawable.ic_beverages, "Beverages"),
+            CategoryModel(R.drawable.ic_breakfast, "Breakfast & Dairy"),
+            CategoryModel(R.drawable.ic_child_care, "Baby & Pet Care"),
+            CategoryModel(R.drawable.ic_packaged_food, "Packaged Food"),
+            CategoryModel(R.drawable.ic_lowest_price, "Lowest Price"),
+            CategoryModel(R.drawable.ic_best_value, "Best Value"),
+            CategoryModel(R.drawable.ic_fruits, "Fruits & Vegetable")
         )
     }
     val listCategory: LiveData<ArrayList<CategoryModel>> = _listCategory

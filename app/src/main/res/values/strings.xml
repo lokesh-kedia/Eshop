@@ -15,4 +15,8 @@
     <string name="my_orders">My Orders</string>
     <string name="my_cart">My Cart</string>
     <string name="about_us">About Us</string>
+    <string name="search_for_products">Search for products</string>
+    <string name="up_to_73_off">Up To 73% Off</string>
+    <string name="grocery_staples">Grocery &amp; Staples</string>
+    <string name="category_desc">Pulses, Atta &amp; Other Flours, Rice &amp; Other Grains. Dry &amp; Nuts, Extra</string>
 </resources>

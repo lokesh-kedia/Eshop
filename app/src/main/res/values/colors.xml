@@ -6,4 +6,7 @@
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000</color>
     <color name="nav_header_color">#FFE198</color>
+    <color name="colorOrange">#FD5D07</color>
+    <color name="lightestOrange">#FCEDE6</color>
+    <color name="colorSkyBlue">#19A7B8</color>
 </resources>

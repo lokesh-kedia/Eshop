@@ -35,6 +35,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorBlack"
                 app:backgroundTint="@color/colorWhite"
+                android:onClick="openAllCategories"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar" />
@@ -50,11 +51,11 @@
                 app:layout_constraintBottom_toBottomOf="@id/btn_category"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btn_category"
-                app:layout_constraintTop_toTopOf="@id/btn_category" />
+                app:layout_constraintTop_toTopOf="@id/btn_category"
+                app:queryHint="@string/search_for_products" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
