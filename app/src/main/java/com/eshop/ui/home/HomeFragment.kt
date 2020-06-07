@@ -1,5 +1,6 @@
 package com.eshop.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.eshop.R
+import com.eshop.ui.maps.MapsActivity
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
 
@@ -27,6 +30,17 @@ class HomeFragment : Fragment() {
             val gridAdapter = activity?.let { it1 -> CategoryGridAdapter(it1, it) }
             categoryGridView.adapter = gridAdapter
         })
+
+        root.location_fab.setOnClickListener {
+            val intent = Intent(activity, MapsActivity::class.java)
+            intent.putExtra("ClassType", "NearBy")
+            startActivity(intent)
+        }
+        root.add_shop_fab.setOnClickListener {
+            val intent = Intent(activity, MapsActivity::class.java)
+            intent.putExtra("ClassType", "AddShop")
+            startActivity(intent)
+        }
         return root
     }
 }

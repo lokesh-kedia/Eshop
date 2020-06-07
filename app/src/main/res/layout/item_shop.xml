@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shop_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_16dp">
+
+    <ImageView
+        android:id="@+id/shop_img"
+        android:layout_width="96dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_breakfast"
+        app:layout_constraintBottom_toBottomOf="@+id/img_offers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Hariom Fashion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/shop_img"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shop_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:text="North Indian, South Indian, Fast Food"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/shop_img"
+        app:layout_constraintTop_toBottomOf="@+id/shop_name" />
+
+    <ImageView
+        android:id="@+id/img_star"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintStart_toEndOf="@+id/shop_img"
+        app:layout_constraintTop_toBottomOf="@+id/shop_category" />
+
+    <TextView
+        android:id="@+id/shop_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="4.0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@+id/img_star"
+        app:layout_constraintTop_toBottomOf="@+id/shop_category" />
+
+    <TextView
+        android:id="@+id/time_to_reach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="29 mins"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@+id/shop_rating"
+        app:layout_constraintTop_toBottomOf="@+id/shop_category" />
+
+    <LinearLayout
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shop_img"
+        app:layout_constraintTop_toBottomOf="@+id/img_star" />
+
+    <ImageView
+        android:id="@+id/img_offers"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_offers"
+        app:layout_constraintStart_toEndOf="@+id/shop_img"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+    <TextView
+        android:id="@+id/coupon_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:text="30% off  | Use coupon ESHOP30"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/img_offers"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+</androidx.constraintlayout.widget.ConstraintLayout>

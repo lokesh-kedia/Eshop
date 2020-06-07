@@ -16,6 +16,11 @@
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_cart"
             android:title="@string/my_cart" />
+
+        <item
+            android:id="@+id/add_items"
+            android:icon="@drawable/ic_cart"
+            android:title="@string/sell_your_items" />
         <item
             android:id="@+id/nav_about_us"
             android:icon="@drawable/ic_about"

@@ -1,11 +1,13 @@
 package com.eshop.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.eshop.R
+import com.eshop.ui.item.ItemListActivity
 import kotlinx.android.synthetic.main.item_grid_category.view.*
 
 class CategoryGridAdapter(
@@ -20,6 +22,11 @@ class CategoryGridAdapter(
             inflater.inflate(R.layout.item_grid_category, parent, false)
         } else {
             convertView
+        }
+        view.setOnClickListener {
+            val intent = Intent(context, ItemListActivity::class.java)
+            intent.putExtra("classType","ItemList")
+            context.startActivity(intent)
         }
         view.img_category.setImageResource(listCategory[position].img)
         view.category_name.text = listCategory[position].name

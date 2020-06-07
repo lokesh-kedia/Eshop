@@ -1,4 +1,4 @@
-package com.eshop
+package com.eshop.ui.allCategories
 
 import android.content.Context
 import android.util.Log
@@ -7,17 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.GridView
+import android.widget.ImageView
+import android.widget.TextView
+import com.eshop.R
 import com.eshop.ui.home.CategoryGridAdapter
 import com.eshop.ui.home.CategoryModel
 
 
 class CustomExpandableListAdapter(
     private val context: Context,
-    private val expandableListTitle: List<String>,
-    private val expandableListDetail: HashMap<String, List<String>>
+    private val expandableListTitle: ArrayList<AllCategoryModel>
 ) : BaseExpandableListAdapter() {
-    override fun getChild(listPosition: Int, expandedListPosition: Int): List<String>? {
-        return expandableListDetail[expandableListTitle[listPosition]]
+
+    override fun getChild(listPosition: Int, expandedListPosition: Int): ArrayList<HeaderDetails> {
+        return expandableListTitle[listPosition].childDetails
     }
 
     override fun getChildId(listPosition: Int, expandedListPosition: Int): Long {
@@ -30,20 +33,18 @@ class CustomExpandableListAdapter(
         isLastChild: Boolean, convertView1: View?, parent: ViewGroup?
     ): View? {
         var convertView: View? = convertView1
-        val expandedListText =
+        val childList =
             getChild(listPosition, expandedListPosition)
         if (convertView == null) {
             val layoutInflater = context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = layoutInflater.inflate(R.layout.item_expanded_category_child, null)
         }
-        Log.d("getChildView", "getChildView: "+"Called")
+        Log.d("getChildView", "getChildView: " + "Called")
         val gridView = convertView?.findViewById(R.id.child_grid) as GridView
         val list = ArrayList<CategoryModel>()
-        if (expandedListText != null) {
-            for (text in expandedListText) {
-                list.add(CategoryModel(R.drawable.ic_fruits, text))
-            }
+        for (child in childList) {
+            list.add(CategoryModel(child.img, child.name))
         }
         val gridAdapter = CategoryGridAdapter(context, list)
         gridView.adapter = gridAdapter
@@ -54,8 +55,8 @@ class CustomExpandableListAdapter(
         return 1
     }
 
-    override fun getGroup(listPosition: Int): Any {
-        return expandableListTitle[listPosition]
+    override fun getGroup(listPosition: Int): HeaderDetails {
+        return expandableListTitle[listPosition].headerDetails
     }
 
     override fun getGroupCount(): Int {
@@ -72,14 +73,18 @@ class CustomExpandableListAdapter(
     ): View? {
         Log.d("AccountTest", "getGroupView")
         var convertView: View? = convertView1
-        val listTitle = getGroup(listPosition) as String
+        val headerDetails = getGroup(listPosition)
         if (convertView == null) {
             val layoutInflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = layoutInflater.inflate(R.layout.item_expanded_category_parent, null)
         }
-        //val listTitleTextView = convertView?.findViewById(R.id.account_tag) as TextView
-        //listTitleTextView.text = listTitle
+        val listTitleTextView = convertView?.findViewById(R.id.text_category_name) as TextView
+        val textDiscount = convertView.findViewById(R.id.text_discount) as TextView
+        val imgCategory = convertView.findViewById(R.id.img_category) as ImageView
+        listTitleTextView.text = headerDetails.name
+        textDiscount.text = "UP TO ${headerDetails.discount}% OFF"
+        imgCategory.setImageResource(headerDetails.img)
         return convertView
     }
 
